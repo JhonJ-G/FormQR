@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del QR</title>
+    <link rel="stylesheet" href="./Estilo/style.css">
+</head>
+<body>
+    <div id="content">
+        <h1>Datos del QR</h1>
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Cédula:</strong> <span id="cedula"></span></p>
+        <p><strong>Dirección:</strong> <span id="direccion"></span></p>
+        <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+        <p><strong>Correo Electrónico:</strong> <span id="email"></span></p>
+    </div>
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('nombre').textContent = params.get('nombre') || 'No disponible';
+        document.getElementById('cedula').textContent = params.get('cedula') || 'No disponible';
+        document.getElementById('direccion').textContent = params.get('direccion') || 'No disponible';
+        document.getElementById('telefono').textContent = params.get('telefono') || 'No disponible';
+        document.getElementById('email').textContent = params.get('email') || 'No disponible';
+    </script>
+</body>
+</html>
